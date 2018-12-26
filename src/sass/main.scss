@@ -1,0 +1,20 @@
+@charset 'UTF-8';
+
+
+
+  // 0. Generic – reset and/or normalize styles
+  @import
+    '00-generic/_base';
+
+
+// 1. Components – specific UI components. This is where majority of our work takes place and our UI components are often composed of Objects and Components
+
+@import
+    '01-components/Container',
+    '01-components/Button',
+    '01-components/Tooltip';
+
+
+// 2. Tools – media-queries for responsive design
+  @import
+    '02-tools/_media-queries';

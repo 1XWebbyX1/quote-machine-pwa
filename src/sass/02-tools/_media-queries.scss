@@ -1,0 +1,40 @@
+//for small tabs and mobile-------------------------------------
+@media only screen and (max-width: 800px){
+  body #container{
+    margin-top: 25%;
+    width: 100%;
+    height: 70vh;
+
+    .card-wrapper {
+      width: 100%;
+      height:100%;
+    .card {
+      width: 100%;
+      height: 100%;
+      #text{
+        font-size: 4vmax;
+      }
+      #Q{
+        font-size: 6vmax;
+      }
+      #subs{
+         #author{
+         margin-left: 63%;
+         font-size: 3.8vmax;
+        }
+
+        #copy-quote{
+          font-size: 4vmax;
+        }
+      }
+    }
+   }
+  }
+
+  body #new-quote{
+    font-size: 3vmax;
+    border-width: 1px;
+    width: 40%;
+  }
+
+}

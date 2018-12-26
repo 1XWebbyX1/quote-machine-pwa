@@ -1,0 +1,72 @@
+#container{
+  position: relative;
+  margin: auto;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  width: calc(50vmax + 2rem);
+  height: calc(35vmax + 2rem);
+  background: rgba(0, 0, 0, 0.3);
+
+  .card-wrapper{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    resize: both;
+    width: 90%;
+    height: 90%;
+    border: 2px solid white;
+    background: transparent;
+
+    .card{
+      margin: auto;
+      padding: 0 20px;
+      width: 90%;
+      height: 90%;
+      background: rgba(0, 0, 0, 0.3);
+
+      #text{
+        margin: 10% auto;
+        font-size: 2vmax;
+        text-align: center;
+        color: white;
+        line-height: 1.1;
+        margin-bottom: 4%;
+      }
+
+      #Q{
+        font-size: 4vmax;
+        color: $color;
+      }
+
+      #subs{
+        margin: 0% 2%;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        background: rgba(0, 0, 0, 0.3);
+
+        #author{
+      //  margin-left: 65%;
+        //margin-right: 2%;
+        text-align: right;
+        color: $color;
+        font-size: 1.8vmax;
+        line-height: 1.1;
+        }
+
+        #copy-quote{
+        //margin-top: 2%;
+      //  margin-left: 7%;
+        color: $color;
+        font-size: 2vmax;
+        cursor: pointer;
+        }
+      }
+
+    }
+  }
+}
