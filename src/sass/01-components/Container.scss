@@ -35,11 +35,13 @@
         color: white;
         line-height: 1.1;
         margin-bottom: 4%;
+        user-select: none;
       }
 
       #Q{
         font-size: 4vmax;
         color: $color;
+        user-select: none;
       }
 
       #subs{
@@ -50,8 +52,7 @@
         background: rgba(0, 0, 0, 0.3);
 
         #author{
-      //  margin-left: 65%;
-        //margin-right: 2%;
+        user-select: none;
         text-align: right;
         color: $color;
         font-size: 1.8vmax;
@@ -59,8 +60,6 @@
         }
 
         #copy-quote{
-        //margin-top: 2%;
-      //  margin-left: 7%;
         color: $color;
         font-size: 2vmax;
         cursor: pointer;
