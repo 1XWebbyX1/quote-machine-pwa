@@ -19,7 +19,7 @@
       }
       #subs{
          #author{
-         margin-left: 63%;
+         margin-left: 20%;
          font-size: 3.8vmax;
         }
 
@@ -29,6 +29,13 @@
       }
     }
    }
+  }
+
+  body #subs .tooltiptext {
+      width: 80px;
+      margin-left: 2%;
+      height: 25px!important;
+     transition: all 2s ease;
   }
 
   body #new-quote{
