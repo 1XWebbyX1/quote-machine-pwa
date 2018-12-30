@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/quote-machine-pwa/static/js/runtime~main.7a425a16.js"
   },
   {
-    "revision": "b0dec77ad6cf3d6c93eb9051d981631f",
+    "revision": "8de1b5e366d5358b8676e51f095ab914",
     "url": "/quote-machine-pwa/index.html"
   }
 ];
