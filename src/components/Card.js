@@ -1,7 +1,8 @@
 import React from 'react'
 import $ from 'jquery'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClipboard } from '@fortawesome/free-solid-svg-icons'
+import { faClipboard  } from '@fortawesome/free-solid-svg-icons'
+import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons'
 
 
 var arr = []; //to store response from URL
@@ -41,8 +42,11 @@ function fetchJSON() {
 }
 //___________________________________---------------------------------------------------
 
+function openURL(url){
+  window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=0');
+}
 
-
+function inIframe () { try { return window.self !== window.top; } catch (e) { return true; } }
 
 
 class Card extends React.Component{
@@ -50,6 +54,8 @@ class Card extends React.Component{
      super(props);
      this.copyText = this.copyText.bind(this);
      this.handleClick = this.handleClick.bind(this);
+     this.tweet = this.tweet.bind(this);
+     this.currentQuote = "Too many of us are not living our dreams because we are living our fears.";
   }
 
   componentDidMount(){
@@ -60,7 +66,8 @@ class Card extends React.Component{
       var  randomQuote = arr[Math.floor(Math.random() * arr.length)];
       var  currentQuote = randomQuote.quote;
       var  currentAuthor = randomQuote.author;
-      $("#text, #author, #copy-quote, .card-wrapper").animate(
+      this.currentQuote = currentQuote;
+     $("#text, #author, #copy-quote, .card-wrapper").animate(
       { opacity: 0 },
       2000,
       function() {
@@ -87,7 +94,7 @@ class Card extends React.Component{
      $temp.val($(copyText).text()).select(); //copy the quote and append to input , then select the text
      document.execCommand("copy");//copy the selected text
      $temp.remove();
-    $('.tooltiptext').css('opacity', 1); //display copied tooltip text
+    $('.tooltiptext').css({opacity: 1}); //display copied tooltip text
 
     //hide tooltip after 1s
     setTimeout(function() {
@@ -96,6 +103,11 @@ class Card extends React.Component{
    }
 
 
+ tweet(){
+   if(!inIframe()) {
+      openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + this.currentQuote + '"'));
+    }
+ }
 
 
 
@@ -105,9 +117,12 @@ class Card extends React.Component{
         <div id='Q'>Q</div>
         <div id="text">Too many of us are not living our dreams because we are living our fears.
           </div>
+          <span class="tooltiptext">Copied!</span>
          <div id='subs'>
+            <div id='icons'>
             <FontAwesomeIcon id="copy-quote" icon={faClipboard} onClick={this.copyText} />
-            <span class="tooltiptext">Copied!</span>
+            <FontAwesomeIcon id='tweet-quote' icon={faTwitterSquare} onClick={this.tweet}/>
+          </div>
            <div id='author'>Les Brown</div>
         </div>
         <button id="new-quote" onClick={this.handleClick}>New  Quote</button>

@@ -59,11 +59,26 @@
         line-height: 1.1;
         }
 
-        #copy-quote{
-        color: $color;
-        font-size: 2vmax;
-        cursor: pointer;
+        #icons{
+          width: 20%;
+          display: flex;
+          justify-content: space-between;
+
+          #copy-quote{
+          color: $color;
+          font-size: 2vmax;
+          cursor: pointer;
+          }
+
+          #tweet-quote{
+          color: $color;
+          font-size: 2vmax;
+          margin-left: -50%;
+          cursor: pointer;
+          }
         }
+
+
       }
 
     }
