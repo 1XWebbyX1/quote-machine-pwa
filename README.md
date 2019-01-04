@@ -15,6 +15,7 @@ Project is created with :
 # Key features
 - View Inspiring Quotes and their authors
 - Copy Quote to clipboard with a click
+- Tweet Quote with a click
 
 
 # Install
