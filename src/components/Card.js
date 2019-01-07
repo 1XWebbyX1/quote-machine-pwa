@@ -11,6 +11,9 @@ var arr = []; //to store response from URL
 //HELPER FUNCTIONS____________________________________________________________
 function logResult(result) {
     var quotesData = result.quotes;
+    quotesData = quotesData.filter((quotes) => {
+      return (quotes.quote.length <= 254);
+    })
     arr.push(...quotesData);
 }
 
