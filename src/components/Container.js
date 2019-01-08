@@ -1,5 +1,6 @@
 import React from 'react'
 import asyncComponent from './asyncComponent/async'
+
 const Wrapper = asyncComponent(() =>
      import('./Wrapper').then(module => module.default)
 );

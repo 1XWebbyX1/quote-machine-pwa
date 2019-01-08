@@ -12,7 +12,7 @@ const Container = asyncComponent(() =>
 class App extends Component {
   render() {
     return (
-    <Container />
+      <Container />
     );
   }
 }

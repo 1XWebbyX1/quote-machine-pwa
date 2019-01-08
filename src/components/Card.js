@@ -9,12 +9,24 @@ var arr = []; //to store response from URL
 
 
 //HELPER FUNCTIONS____________________________________________________________
-function logResult(result) {
-    var quotesData = result.quotes;
-    quotesData = quotesData.filter((quotes) => {
-      return (quotes.quote.length <= 254);
-    })
-    arr.push(...quotesData);
+
+
+function getQuotes() {
+  return $.ajax({
+    headers: {
+      Accept: "application/json"
+    },
+    url: 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json',
+    success: function(jsonQuotes) {
+      if (typeof jsonQuotes === 'string') {
+        var quotesData = JSON.parse(jsonQuotes).quotes;
+        quotesData = quotesData.filter((quotes) => {
+          return (quotes.quote.length <= 254);
+        })
+        arr.push(...quotesData);
+      }
+    }
+  });
 }
 
 function logError(error) {
@@ -24,23 +36,9 @@ function logError(error) {
   $('#text').text(errorMsg);
 }
 
-function validateResponse(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-}
-
-function readResponseAsJSON(response) {
-  return response.json();
-}
-
 
 function fetchJSON() {
-  fetch('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json')
-    .then(validateResponse)
-    .then(readResponseAsJSON)
-    .then(logResult)
+   getQuotes()
     .catch(logError);
 }
 //___________________________________---------------------------------------------------
