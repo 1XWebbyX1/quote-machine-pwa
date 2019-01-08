@@ -1,7 +1,7 @@
 {
-  "main.css": "/quote-machine-pwa/static/css/main.1f6e0988.chunk.css",
-  "main.js": "/quote-machine-pwa/static/js/main.8b6b4015.chunk.js",
-  "main.js.map": "/quote-machine-pwa/static/js/main.8b6b4015.chunk.js.map",
+  "main.css": "/quote-machine-pwa/static/css/main.c1644ab5.chunk.css",
+  "main.js": "/quote-machine-pwa/static/js/main.0324ad5a.chunk.js",
+  "main.js.map": "/quote-machine-pwa/static/js/main.0324ad5a.chunk.js.map",
   "static/js/1.7ef9f4f6.chunk.js": "/quote-machine-pwa/static/js/1.7ef9f4f6.chunk.js",
   "static/js/1.7ef9f4f6.chunk.js.map": "/quote-machine-pwa/static/js/1.7ef9f4f6.chunk.js.map",
   "static/js/2.d6142d8f.chunk.js": "/quote-machine-pwa/static/js/2.d6142d8f.chunk.js",
@@ -14,8 +14,8 @@
   "static/js/5.c0d88101.chunk.js.map": "/quote-machine-pwa/static/js/5.c0d88101.chunk.js.map",
   "runtime~main.js": "/quote-machine-pwa/static/js/runtime~main.e887c804.js",
   "runtime~main.js.map": "/quote-machine-pwa/static/js/runtime~main.e887c804.js.map",
-  "static/css/main.1f6e0988.chunk.css.map": "/quote-machine-pwa/static/css/main.1f6e0988.chunk.css.map",
+  "static/css/main.c1644ab5.chunk.css.map": "/quote-machine-pwa/static/css/main.c1644ab5.chunk.css.map",
   "index.html": "/quote-machine-pwa/index.html",
-  "precache-manifest.3a9a67190f83e7f3bd688ff2813d7a7b.js": "/quote-machine-pwa/precache-manifest.3a9a67190f83e7f3bd688ff2813d7a7b.js",
+  "precache-manifest.37e30b4e9c5081b384a2af9bc4bcd281.js": "/quote-machine-pwa/precache-manifest.37e30b4e9c5081b384a2af9bc4bcd281.js",
   "service-worker.js": "/quote-machine-pwa/service-worker.js"
 }

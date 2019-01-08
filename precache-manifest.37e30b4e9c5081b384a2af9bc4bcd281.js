@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "8b6b4015a9f592dbe408",
-    "url": "/quote-machine-pwa/static/css/main.1f6e0988.chunk.css"
+    "revision": "0324ad5a6a62e0be7ec5",
+    "url": "/quote-machine-pwa/static/css/main.c1644ab5.chunk.css"
   },
   {
-    "revision": "8b6b4015a9f592dbe408",
-    "url": "/quote-machine-pwa/static/js/main.8b6b4015.chunk.js"
+    "revision": "0324ad5a6a62e0be7ec5",
+    "url": "/quote-machine-pwa/static/js/main.0324ad5a.chunk.js"
   },
   {
     "revision": "7ef9f4f6d45992661f95",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/quote-machine-pwa/static/js/runtime~main.e887c804.js"
   },
   {
-    "revision": "7a61fbf2bbb18a87d8c547a831194362",
+    "revision": "e8ba61024f6833e2abc20f303e673e89",
     "url": "/quote-machine-pwa/index.html"
   }
 ];
