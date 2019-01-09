@@ -20,9 +20,8 @@ function getQuotes() {
     success: function(jsonQuotes) {
       if (typeof jsonQuotes === 'string') {
         var quotesData = JSON.parse(jsonQuotes).quotes;
-        quotesData = quotesData.filter((quotes) => {
-          return (quotes.quote.length <= 254);
-        })
+        quotesData = quotesData.filter((quote) => quote.quote.length <= 200);
+        console.log(quotesData);
         arr.push(...quotesData);
       }
     }
