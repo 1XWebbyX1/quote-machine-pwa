@@ -1,8 +1,5 @@
 import React from 'react'
-import asyncComponent from './asyncComponent/async'
-const Card = asyncComponent(() =>
-     import('./Card').then(module => module.default)
-);
+import Card from './Card'
 
 class Wrapper extends React.Component{
   render(){

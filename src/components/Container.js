@@ -1,9 +1,5 @@
 import React from 'react'
-import asyncComponent from './asyncComponent/async'
-
-const Wrapper = asyncComponent(() =>
-     import('./Wrapper').then(module => module.default)
-);
+import Wrapper from './Wrapper'
 
 class Container extends React.Component{
   render() {

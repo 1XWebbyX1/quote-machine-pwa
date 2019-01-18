@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import asyncComponent from './components/asyncComponent/async'
-
-//dynamic import component
-const Container = asyncComponent(() =>
-     import('./components/Container').then(module => module.default)
-);
-
+import Container from './components/Container'
 
 
 class App extends Component {
