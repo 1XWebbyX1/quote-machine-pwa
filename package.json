@@ -1,37 +1,31 @@
 {
   "name": "quote-machine-app",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "http://1XWebbyX1.github.io/quote-machine-pwa",
+  "version": "1.0.0",
+  "description": "A Quote Machine web app",
+  "main": "server.js",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.12",
-    "@fortawesome/free-brands-svg-icons": "^5.6.3",
-    "@fortawesome/free-solid-svg-icons": "^5.6.3",
-    "@fortawesome/react-fontawesome": "^0.1.3",
-    "babel-polyfill": "^6.26.0",
-    "jquery": "^3.3.1",
-    "node-sass": "^4.11.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "2.1.1"
+    "concurrently": "^4.1.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.10"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "node server.js",
+    "dev": "concurrently \"NODE_ENV=dev node server.js\" \"cd client && npm start\"",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1XWebbyX1/quote-machine-pwa.git"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead", 
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "gh-pages": "^2.0.1"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1XWebbyX1/quote-machine-pwa/issues"
+  },
+  "homepage": "https://github.com/1XWebbyX1/quote-machine-pwa#readme"
 }
