@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js",
+    "start": "NODE_ENV=dev node server.js",
     "dev": "concurrently \"NODE_ENV=dev node server.js\" \"cd client && npm start\"",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"

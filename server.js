@@ -15,7 +15,7 @@ const path = require("path")
 
 
 // Basic Configuration
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 5000;
 ;
 /** this project needs a db !! **/
  mongoose.connect(config.DBHost, {useNewUrlParser: true});
@@ -27,21 +27,24 @@ const PORT = process.env.PORT || 8081;
  // checks if connection with the database is successful
  db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-app.use(express.static(path.join(__dirname, "client", "build")));
 
- router.get("/getQuotes", (req, res) => {
+ app.get("/api/getQuotes", (req, res) => {
    Quotes.find((err, data) => {
      if (err) return res.json({ success: false, error: err });
      return res.json({ success: true, data: data });
    });
  });
 
-// append /api for our http requests
-app.use("/api", router);
 
-router.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
+ if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
+
 // launch our backend into a port
 var server = app.listen(PORT, () => console.log(`LISTENING ON PORT ${PORT}`));
 
