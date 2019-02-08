@@ -1,27 +1,32 @@
 //button----------------------------------------
 #new-quote{
-  width: auto;
-  height: auto;
-  padding: 2.5% 7%;
-  color: white;
   font-size: calc(0.3em + 1.1vw);
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
   position: absolute;
   top: 75%;
   left: 50%;
   transform: translateX(-50%);
-  border: 1.5px solid #e67300;
-  border-radius: 20px;
+  border: 1px solid #e67300;
+  border-radius: 15px;
   line-height: 1.1;
-  display: inline-block;
   outline: none;
-  transition: all 1s ease;
+  transition: all 150ms ease;
   background: transparent;
-  box-shadow: 0px 4px 20px black;
+  box-shadow: 0px 2px 15px white;
+  width: 50%;
+  height: auto;
+  padding: 14px 24px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+
 
   &:hover{
-    background: #e67300;
+    box-shadow: 0px 2px 15px #e67300;
+    background: white;
+    color: black;
   }
 }
