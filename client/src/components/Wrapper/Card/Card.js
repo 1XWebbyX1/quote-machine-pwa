@@ -53,7 +53,7 @@ class Card extends React.Component{
 
   //copy Quote-------------------------------------
   copyText(e){
-     var copyText = this.textarea.current.select();
+     window.getSelection().selectAllChildren(this.textarea.current);
      document.execCommand('copy');
      this.props.setTooltipVisibility('show');
     setTimeout(function() {//hide tooltip after 1s
@@ -87,7 +87,7 @@ class Card extends React.Component{
     return (
       <div className={"card "+ this.props.cardVisibility}>
         <div id='Q'>Q</div>
-        <textarea ref={this.textarea} readOnly={true} id="text" value={this.props.currentQuote}/>
+        <div ref={this.textarea} readOnly={true} id="text">{this.props.currentQuote}</div>
           <span className={"tooltiptext "+ this.props.tooltipVisibility}>Copied!</span>
           <div id='subs'>
             <div id='icons'>

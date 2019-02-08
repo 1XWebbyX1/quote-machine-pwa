@@ -38,18 +38,13 @@
 
       #text{
         margin: 10% auto;
-        width: 100%;
         font-size: calc(0.5em + 1.5vw);
         text-align: center;
         color: white;
-        line-height: 1.1;
+        line-height: 1;
         margin-bottom: 4%;
-        user-select: none;
+        user-select: all;
         cursor: default;
-        border: none;
-        background-color: transparent;
-        resize: none;
-        outline: none;
       }
 
       #Q{

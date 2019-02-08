@@ -14,5 +14,4 @@ const config = {
  dev,
  test
 };
-console.log(config[env]);
 module.exports = config[env];
