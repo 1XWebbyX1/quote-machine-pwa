@@ -77,7 +77,7 @@ class Card extends React.Component{
 
  tweet(){
    if(!this.inIframe()) {
-      this.openURL('https://twitter.com/intent/tweet?hashtags=quotes&text=' + encodeURIComponent('"' + this.state.currentQuote + '"'));
+      this.openURL('https://twitter.com/intent/tweet?hashtags=quotes&text=' + encodeURIComponent('"' + this.props.currentQuote + '"'));
     }
  }
 
