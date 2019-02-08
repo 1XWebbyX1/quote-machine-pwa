@@ -22,7 +22,7 @@ class Card extends React.Component{
   }
 
   fetchQuotes(){
-    fetch("http://localhost:5000/api/getQuotes")
+    fetch("/api/getQuotes")
       .then(data => data.json())
       .then(res => {
         this.arr = res.data;
