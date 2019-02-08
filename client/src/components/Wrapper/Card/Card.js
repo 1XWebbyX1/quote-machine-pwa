@@ -87,7 +87,7 @@ class Card extends React.Component{
     return (
       <div className={"card "+ this.props.cardVisibility}>
         <div id='Q'>Q</div>
-        <div ref={this.textarea} readOnly={true} id="text">{this.props.currentQuote}</div>
+        <div ref={this.textarea} id="text">{this.props.currentQuote}</div>
           <span className={"tooltiptext "+ this.props.tooltipVisibility}>Copied!</span>
           <div id='subs'>
             <div id='icons'>

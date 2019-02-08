@@ -10,7 +10,8 @@
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.10"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  },
   "scripts": {
     "start": "NODE_ENV=dev node server.js",
     "dev": "concurrently \"NODE_ENV=dev node server.js\" \"cd client && npm start\"",
