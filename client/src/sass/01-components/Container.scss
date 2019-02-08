@@ -16,15 +16,24 @@
     justify-content: center;
     align-items: center;
     resize: both;
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     border: 2px solid white;
     background: transparent;
+
+    .hide{
+      opacity: 0;
+    }
+
+    .show{
+      opacity: 1;
+    }
 
     .card{
       padding: 0 20px;
       width: 90%;
       height: 90%;
+      transition: opacity 2s ease-in-out;
       background: rgba(0, 0, 0, 0.3);
 
       #text{
@@ -32,9 +41,9 @@
         font-size: calc(0.5em + 1.5vw);
         text-align: center;
         color: white;
-        line-height: 1.1;
+        line-height: 1;
         margin-bottom: 4%;
-        user-select: none;
+        cursor: default;
       }
 
       #Q{

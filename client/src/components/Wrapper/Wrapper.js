@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './Card'
+import Card from './Card/ConnectedComponent.js'
 
 class Wrapper extends React.Component{
   render(){
