@@ -8,6 +8,10 @@ import sinon from 'sinon'
 // Our Component
 import Card from './Card';
 
+const getSelection = jest.fn()
+Object.defineProperty(window, 'getSelection', getSelection);
+
+console.log(typeof getSelection);
 
 describe('Card', () => {
   let app;
@@ -15,7 +19,8 @@ describe('Card', () => {
   mockSetTooltipFunc = jest.fn(),
   mockSetCardFunc = jest.fn(),
   mockDisableFunc = jest.fn(),
-  mockChangeQuoteFunc = jest.fn();
+  mockChangeQuoteFunc = jest.fn(),
+  mockPushQuotesFunc = jest.fn();
 
   beforeEach(() => {
     const props = {
@@ -24,10 +29,12 @@ describe('Card', () => {
       disabled: false,
       currentQuote: 'mockQuote',
       currentAuthor: 'mockAuthor',
+      quotesData: [{'quote': 'sample1', 'author': 'author1'}, {'quote': 'sample2', 'author': 'author2'}],
       setTooltipVisibility: mockSetTooltipFunc,
       setCardVisibility: mockSetCardFunc,
       disableButton: mockDisableFunc,
-      changeQuote: mockChangeQuoteFunc
+      changeQuote: mockChangeQuoteFunc,
+      pushQuotes: mockPushQuotesFunc
     };
     app = mount(
       <Card {...props}/>
@@ -37,6 +44,9 @@ describe('Card', () => {
   afterEach(() => {
     app.unmount();
     mockSetTooltipFunc.mockClear();
+    mockSetCardFunc.mockClear();
+    mockDisableFunc.mockClear();
+    mockChangeQuoteFunc.mockClear();
     spyfetchFunc.restore();
   })
 
@@ -60,15 +70,34 @@ describe('Card', () => {
     expect(spyfetchFunc.calledOnce).to.be.true;
   })
 
-  it('should show tooltip on copy icon click', () => {
-    const icon = app.find('#new-quote').first();
+  describe('when new quote button is clicked', () => {
+    jest.useFakeTimers();
+    beforeEach(() => {
+      const icon = app.find('#new-quote').first();
       icon.simulate('click');
-      expect(mockSetCardFunc.mock.calls.length).to.equal(1);
-      expect(mockSetCardFunc.mock.calls[0][0]).to.equal('hide');
-      expect(mockDisableFunc.mock.calls.length).to.equal(1);
-      expect(mockDisableFunc.mock.calls[0][0]).to.equal(true);
-
+    })
+    afterEach(() => {
+      mockSetTooltipFunc.mockClear();
+      mockSetCardFunc.mockClear();
+      mockDisableFunc.mockClear();
+      mockChangeQuoteFunc.mockClear();
+    })
+    it('should show hide card and disable button', () => {
+        expect(mockSetCardFunc.mock.calls.length).to.equal(1);
+        expect(mockSetCardFunc.mock.calls[0][0]).to.equal('hide');
+        expect(mockDisableFunc.mock.calls.length).to.equal(1);
+        expect(mockDisableFunc.mock.calls[0][0]).to.equal(true);
+        jest.advanceTimersByTime(2000);
+        expect(mockSetCardFunc.mock.calls.length).to.equal(2);
+        expect(mockSetCardFunc.mock.calls[1][0]).to.equal('show');
+        expect(mockChangeQuoteFunc.mock.calls.length).to.equal(1);
+        jest.advanceTimersByTime(3000);
+        expect(mockDisableFunc.mock.calls.length).to.equal(2);
+        expect(mockDisableFunc.mock.calls[1][0]).to.equal(false);
+    })
   })
+
+
 
 
 })

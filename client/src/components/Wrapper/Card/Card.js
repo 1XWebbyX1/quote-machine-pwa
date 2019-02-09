@@ -14,7 +14,6 @@ class Card extends React.Component{
      this.openURL = this.openURL.bind(this);
      this.inIframe = this.inIframe.bind(this);
      this.textarea = React.createRef();
-     this.arr = [];
   }
 
   componentDidMount(){
@@ -25,7 +24,7 @@ class Card extends React.Component{
     fetch("/api/getQuotes")
       .then(data => data.json())
       .then(res => {
-        this.arr = res.data;
+        this.props.pushQuotes(res.data);
       })
       .catch(err => {
         console.log("FETCH FAILED WITH ERROR: " + err);
@@ -35,7 +34,8 @@ class Card extends React.Component{
   }
 
   handleClick(){
-      var  randomQuote = this.arr[Math.floor(Math.random() * this.arr.length)];
+     let arr = this.props.quotesData;
+      var  randomQuote = arr[Math.floor(Math.random() * arr.length)];
       this.props.setCardVisibility('hide');
       this.props.disableButton(true);
       setTimeout(function(){

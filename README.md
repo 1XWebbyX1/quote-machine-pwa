@@ -1,7 +1,7 @@
 # Quote Machine
 A Quote Machine MERN web app bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![screenshot](https://i.ibb.co/4W76rHq/2011965-WYg-Rze-small-09085b79-ca1d-4e22-be34-d74eb6a33518-1.png)
+![screenshot](https://i.ibb.co/QN0dwwt/Screen-Shot-2019-02-09-at-15-04-16.png)
 
 # Visit on web
  Visit at [heroku](https://quote-machine-pwa.herokuapp.com/)
@@ -17,6 +17,7 @@ Project is created with :
 - Sass
 - Jest
 - Enzyme
+- Mocha
 - Chai
 - Sinon
 
@@ -47,6 +48,12 @@ You will then be able to access it at localhost:3000
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
+# Running Server-Side Integration Tests
+
+```shell
+# In the root folder run
+$ npm test
+```
 
 # Running Front-End Tests
 

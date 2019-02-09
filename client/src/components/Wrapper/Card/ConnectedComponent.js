@@ -3,7 +3,7 @@ import Card from './Card.js'
 import {connect} from 'react-redux'
 import { Provider } from 'react-redux'
 import store from './redux/store'
-import {addCardClass, addTooltipClass, updateDisableProp, changeQuote} from './redux/store'
+import {addCardClass, addTooltipClass, updateDisableProp, changeQuote, addQuotes} from './redux/store'
 
 const mapStateToProps = (state)  => {
   return ({
@@ -11,7 +11,8 @@ const mapStateToProps = (state)  => {
     tooltipVisibility: state.tooltipVisibility,
     disabled: state.disabled,
     currentQuote: state.currentQuote,
-    currentAuthor: state.currentAuthor
+    currentAuthor: state.currentAuthor,
+    quotesData: state.quotesData
   });
 };
 
@@ -29,6 +30,9 @@ const mapDispatchToProps = (dispatch) => {
     changeQuote: function(quote, author) {
         dispatch(changeQuote(quote, author));
     },
+    pushQuotes: function(data) {
+        dispatch(addQuotes(data));
+    }
   };
 };
 
